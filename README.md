@@ -9,3 +9,5 @@ TwitterClient is a basic twitter app to read your tweets.
 - [X] User can view tweets with the user profile picture, username, and tweet text.
 - [X] User can pull to refresh.
 - [X] User can load past tweets infinitely.
+- [X] API Caller for posting 'New Tweets'
+- [X] Users can Post New tweets.
