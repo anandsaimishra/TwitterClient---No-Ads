@@ -19,10 +19,8 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         lemonade.addTarget(self, action: #selector(pullTweets), for: .valueChanged)
-        tableView.refreshControl = lemonade
+        self.tableView.refreshControl = lemonade
         
     }
     
@@ -49,6 +47,8 @@ class HomeTableViewController: UITableViewController {
             print("Could Not retreive Tweets")
         })
     }
+    
+
     
     func loadMoreTweets(){
         numberOfTweets += 20
@@ -100,7 +100,10 @@ class HomeTableViewController: UITableViewController {
             cell.ProfileImageView.image = UIImage(data: imageData)
         }
         
+        cell.setFav(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
         
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }
